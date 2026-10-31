@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="android-link-token" content="__ANDROID_TOKEN__">
+  <title>Android Link</title>
+  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/android.css">
+  <script src="/android.js" defer></script>
+</head>
+<body>
+<div class="android-app" id="android-app">
+  <header class="android-header">
+    <div class="android-brand"><img src="/logo.svg" width="24" height="24" alt=""><strong>Android Link</strong><span class="android-tag">PREVIEW</span></div>
+    <button type="button" class="bar-btn" id="settings-toggle" aria-expanded="true" aria-controls="android-settings">Pengaturan</button>
+  </header>
+  <div class="android-body">
+    <main class="android-main">
+      <section class="android-connection" aria-label="Koneksi perangkat">
+        <div><span class="android-eyebrow">PERANGKAT ANDA</span><h1>HP Anda, di desktop.</h1></div>
+        <div class="android-device-row"><select id="device" aria-label="Perangkat Android"><option value="">Mencari perangkat…</option></select><button type="button" class="ctl" id="refresh">Refresh</button></div>
+        <p class="android-help" id="dependencies">Memeriksa ADB dan scrcpy…</p>
+      </section>
+      <section class="android-stage" aria-label="Status mirroring">
+        <div class="android-phone" aria-hidden="true"><div class="android-camera"></div><img src="/logo.svg" width="64" height="64" alt=""><span>Android Link</span><small>USB · ADB · scrcpy</small></div>
+        <h2 id="session-title">Siap untuk terhubung</h2>
+        <p id="session-description">Sambungkan HP melalui USB dan izinkan USB debugging.</p>
+        <span class="android-session" id="session-badge">Belum ada sesi</span>
+        <div class="android-session-actions"><button type="button" class="ctl ctl-primary" id="start" disabled>Mulai mirroring ↗</button><button type="button" class="ctl" id="stop" disabled>Hentikan</button></div>
+        <p class="android-help">Versi awal: video dan kontrol sentuh berada di jendela scrcpy terpisah.</p>
+      </section>
+      <nav class="android-toolbar" aria-label="Kontrol Android">
+        <button type="button" data-action="back" disabled>← <span>Back</span></button>
+        <button type="button" data-action="home" disabled>○ <span>Home</span></button>
+        <button type="button" data-action="recent" disabled>□ <span>Recent</span></button>
+        <i aria-hidden="true"></i>
+        <button type="button" data-action="volume-down" disabled>− <span>Volume</span></button>
+        <button type="button" data-action="volume-up" disabled>＋ <span>Volume</span></button>
+        <button type="button" data-action="power" disabled>⏻ <span>Power</span></button>
+        <button type="button" data-action="screenshot" disabled>▣ <span>Screenshot</span></button>
+      </nav>
+      <p class="android-feedback" id="feedback" role="status" aria-live="polite">Pengaturan diterapkan saat sesi dimulai.</p>
+    </main>
+    <aside class="android-settings" id="android-settings" aria-label="Pengaturan Android">
+      <div class="android-settings-heading"><h2>Settings & Controls</h2><span class="android-dot" aria-hidden="true"></span></div>
+      <section class="android-card"><h3>Tujuan audio</h3><p>Pilih tempat suara diputar.</p>
+        <fieldset class="android-options"><legend class="sr-only">Tujuan audio</legend>
+          <label><input type="radio" name="audio" value="phone" checked><span><strong>HP saja</strong><small>Audio tetap di perangkat</small></span></label>
+          <label><input type="radio" name="audio" value="pc"><span><strong>PC saja</strong><small>Memerlukan Android 11+</small></span></label>
+          <label><input type="radio" name="audio" value="both"><span><strong>HP + PC</strong><small>Android 13+ · tergantung aplikasi</small></span></label>
+        </fieldset>
+        <p class="android-help">Audio terlindungi dapat dibatasi aplikasi. Pada Android 11, buka kunci HP sebelum memulai audio PC.</p>
+      </section>
+      <section class="android-card"><h3>Kualitas mirroring</h3><label class="android-field" for="quality">Preset</label><select id="quality"><option value="light">Ringan · 720p / maks. 30 FPS</option><option value="balanced">Seimbang · 1080p / maks. 60 FPS</option><option value="sharp">Tajam · 1920px / maks. 60 FPS</option></select><p class="android-help">Resolusi mengikuti rasio layar. Performa bergantung pada HP dan PC.</p><label class="android-check"><input type="checkbox" id="screen-off">Matikan layar HP saat sesi dimulai</label></section>
+      <button type="button" class="ctl ctl-primary" id="apply" disabled>Terapkan & mulai ulang sesi</button>
+      <p class="android-help" id="pending">Pilihan tersimpan di PC ini; belum diterapkan ke HP.</p>
+      <section class="android-card"><h3>Tampilan</h3><button type="button" class="ctl" id="theme">Ganti tema</button></section>
+      <details class="android-guide"><summary>Panduan koneksi</summary><ol><li>Pasang Android SDK Platform-Tools dan scrcpy.</li><li>Aktifkan Opsi Pengembang → USB debugging di HP.</li><li>Hubungkan kabel data, buka kunci HP, lalu izinkan komputer.</li><li>Klik Refresh, pilih perangkat, lalu Mulai mirroring.</li></ol></details>
+      <footer class="android-credit">Adaptasi dari <a href="https://github.com/kelvindaniyar/iphone-link" target="_blank" rel="noopener noreferrer">iPhone Link — Kelvin Daniyar</a><br>GNU GPL-3.0 · ikon asli dipertahankan sementara</footer>
+    </aside>
+  </div>
+</div>
+</body>
+</html>
