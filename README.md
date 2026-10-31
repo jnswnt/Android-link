@@ -1,3 +1,5 @@
+> **Android Link:** frontend dan adapter Android tersedia sebagai preview terpisah. Lihat [panduan Android](README-ANDROID.md) untuk menjalankan `python -m handset.android`. Video tahap ini menggunakan jendela scrcpy terpisah. Dokumentasi asli iPhone dipertahankan di bawah.
+
 <p align="center">
   <img src="assets/logo.png" width="180" height="180" alt="iPhone Link Logo - Native iPhone Mirroring for Windows 11" style="border-radius: 40px; box-shadow: 0 16px 36px rgba(0, 120, 212, 0.35);">
 </p>
